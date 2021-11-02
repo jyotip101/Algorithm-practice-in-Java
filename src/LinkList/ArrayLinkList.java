@@ -1,5 +1,6 @@
 package LinkList;
-  
+
+import java.util.StringJoiner;
 
 public class ArrayLinkList {
 	    private Node head;
@@ -26,6 +27,14 @@ public class ArrayLinkList {
 	        System.out.println();
 	    }
 	    
+	    public int getNth(int index) {
+	    	Node c = head;
+	    	for(int i = 0; i< index; ++i) {
+	    		c = c.next;
+	    	}
+	    	return c.data;
+	    }
+	    
 	public static void main(String[] args) { 
 		ArrayLinkList list = new ArrayLinkList();
 		
@@ -36,7 +45,8 @@ public class ArrayLinkList {
 //		Node node = new Node();
 //		node.data = 1;
 //		list. 
-		list.printLinkedList();
+		list.printLinkedList(); 
+		System.out.print(list.getNth(0));
 	}
 
 }
